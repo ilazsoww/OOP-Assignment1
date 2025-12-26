@@ -1,40 +1,39 @@
-public class Human {
-    private int teeth = 32;
-    private String ru;
-    private boolean isKind;
+public abstract class Human {
+    protected int teeth = 32;
+    protected String region;
+    protected boolean isKind;
 
-    public Human(int teeth, String ru, boolean isKind) {
-        this.teeth = teeth;
-        this.ru = ru;
+    public Human(int teeth, String region, boolean isKind) {
+        setTeeth(teeth);
+        setRegion(region);
         this.isKind = isKind;
-        System.out.println("Human initialized with properties");
     }
-    public Human() { System.out.println("Human initialized with properties"); }
+    public Human() {}
 
-    public String getTeeth() {
-        return "I have " + teeth + " teeth";
+    public void greet(){
+        String kindText = isKind ? "kind" : "evil";
+        System.out.println("Hi! My ru is " + region + ". I have " + teeth + " teeth and I am " + kindText);
     }
-    public void setTeeth(int teeth) {
-        this.teeth = teeth;
+    public void goToDentist(int lostTeeth){
+        if (lostTeeth < 0) {
+            System.out.println("Human can't have negative teeth");
+        }
+        System.out.println("Now I have: " + Math.max(0, this.teeth - lostTeeth));
     }
-    public String getRu() {
-        return ru;
+    public abstract void sleep();
+
+    public int getTeeth() { return teeth; }
+    public void setTeeth(int teeth) { this.teeth = teeth; }
+    public String getRegion() {
+        return region;
     }
-    public void setRu(String ru) {
-        this.ru = ru;
+    public void setRegion(String region) {
+        this.region = region;
     }
     public boolean isKind() {
         return isKind;
     }
     public void setKind(boolean kind) {
         isKind = kind;
-    }
-
-    public void Greet(){
-        String kind = isKind ? "kind" : "evil";
-        System.out.println("Hi! My ru is " + ru + ". I have " + teeth + " teeth and I am " + kind);
-    }
-    public void goToDentist(int lostTeeth){
-        this.teeth = teeth-lostTeeth;
     }
 }

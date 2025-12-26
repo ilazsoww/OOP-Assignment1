@@ -1,30 +1,55 @@
 void main() {
-    Human Adam = new Human();
-    Employee e1 = new Employee("Procrastination");
-    Student s1 = new Student("Math", 5.5f);
+    Student student1 = new Student("Math", 6.5f, 32, "Tabyn", true);
+    Human sAsHuman = new Student("OOP", 1.0f);
+    IWalk sAsWalk = new Student("Physics", 26.5f);
 
-    Scanner sc = new Scanner(System.in);
-    System.out.print("Enter human's ru: ");
-    Adam.setRu(sc.nextLine());
-    System.out.print("Is human kind? (True/False): ");
-    Adam.setKind(sc.nextBoolean());
+    Employee employee1 = new Employee("Backend", 2.2f, 32, "Zhagalbaily", true);
+    Human eAsHuman = new Employee("Frontend", 0.5f, 30, "Naiman", false);
+    IWalk eAsWalk = new Employee("QA", 0.0f, 32, "Kerey", true);
+    IWork eAsWork = new Employee("DevOps", 255.0f, 32, "Tama", true);
 
-    Adam.Greet();
-    System.out.println("Adam's Ru is: " + Adam.getRu() + "\nAdam has " + Adam.getTeeth() + " teeth\nAdam is " + (Adam.isKind() ? "kind." : "evil."));
+    student1.greet();
+    student1.goToDentist(32);
+    student1.sleep();
+    System.out.println("\n");
 
-    e1.setRu("Zhagalbaily");
-    e1.Greet();
-    e1.setCoffeeDrunk(30.0f);
-    e1.setTeeth(30);
-    System.out.println(e1.getTeeth());
-    System.out.println(e1.getCoffeeDrunk());
-    e1.goToDentist(15);
-    System.out.println(e1.getTeeth());
+    employee1.greet();
+    employee1.goToDentist(17);
+    employee1.sleep();
+    System.out.println("\n");
 
-    s1.setRu("Tabyn");
-    s1.setKind(false);
-    s1.Greet();
-    System.out.println(s1.getBestSubject());
-    System.out.println(s1.getHoursOfSleep());
-    s1.goToDentist(32);
+    student1.step();
+    student1.jump();
+    student1.study();
+    student1.setBestSubject("Samopoznanie");
+    System.out.println(student1.getBestSubject());
+    student1.setHoursOfSleep(8.0f);
+    System.out.println(student1.getHoursOfSleep());
+    System.out.println("\n");
+
+    System.out.println(Student.getStudentsCount());
+    System.out.println("\n");
+
+    employee1.step();
+    employee1.jump();
+    employee1.clickMouse();
+    employee1.clickKey();
+    System.out.println("\n");
+
+    employee1.setSpecialization("Senior developer");
+    System.out.println(employee1.getSpecialization());
+    employee1.setCoffeeDrunk(3.5f);
+    System.out.println(employee1.getCoffeeDrunk());
+    System.out.println("\n");
+
+    sAsWalk.step();
+    sAsWalk.jump();
+    System.out.println("\n");
+
+    eAsWalk.step();
+    eAsWalk.jump();
+    System.out.println("\n");
+
+    eAsWork.clickMouse();
+    eAsWork.clickKey();
 }

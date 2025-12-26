@@ -1,4 +1,4 @@
-public class Employee extends Human{
+public class Employee extends Human implements IWalk, IWork{
     private String specialization;
     private float coffeeDrunk;
 
@@ -8,25 +8,38 @@ public class Employee extends Human{
         this.coffeeDrunk = coffeeDrunk;
     }
     public Employee(String specialization){
-        this.specialization = specialization;
-    }
-
-    public String getSpecialization() {
-        return "I am specialized in " + specialization;
-    }
-    public void setSpecialization(String specialization) {
-        this.specialization = specialization;
-    }
-    public String getCoffeeDrunk(){
-        String cofe = String.valueOf(this.coffeeDrunk);
-        return "I had drunk " + cofe + " litres of coffee";
-    }
-    public void setCoffeeDrunk(float coffeeDrunk){
-        this.coffeeDrunk = coffeeDrunk;
+        this(specialization, 0, 32, "Tabyn", true);
     }
 
     @Override
-    public void Greet(){
+    public void greet(){
         System.out.println("I am a worker in small tech company.");
+    }
+    @Override
+    public void step(){
+        System.out.println("Employee stepped...");
+    }
+    @Override
+    public void jump(){
+        System.out.println("Employee jumped...");
+    }
+    @Override
+    public void clickMouse(){
+        System.out.println("Employee clicked the mouse...");
+    }
+    @Override
+    public void clickKey(){
+        System.out.println("Employee clicked the key...");
+    }
+    @Override
+    public void sleep(){
+        System.out.println("Employee sleeping...");
+    }
+
+    public String getSpecialization() { return specialization; }
+    public void setSpecialization(String specialization) { this.specialization = specialization; }
+    public float getCoffeeDrunk(){ return coffeeDrunk; }
+    public void setCoffeeDrunk(float coffeeDrunk){
+        this.coffeeDrunk = coffeeDrunk;
     }
 }
