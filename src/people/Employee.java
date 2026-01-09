@@ -1,4 +1,9 @@
-public class Employee extends Human implements IWalk, IWork{
+package people;
+
+import interfaces.IWork;
+import interfaces.IWalk;
+
+public class Employee extends Human implements IWalk, IWork {
     private String specialization;
     private float coffeeDrunk;
 
@@ -17,23 +22,23 @@ public class Employee extends Human implements IWalk, IWork{
     }
     @Override
     public void step(){
-        System.out.println("Employee stepped...");
+        System.out.println("people.Employee stepped...");
     }
     @Override
     public void jump(){
-        System.out.println("Employee jumped...");
+        System.out.println("people.Employee jumped...");
     }
     @Override
     public void clickMouse(){
-        System.out.println("Employee clicked the mouse...");
+        System.out.println("people.Employee clicked the mouse...");
     }
     @Override
     public void clickKey(){
-        System.out.println("Employee clicked the key...");
+        System.out.println("people.Employee clicked the key...");
     }
     @Override
     public void sleep(){
-        System.out.println("Employee sleeping...");
+        System.out.println("people.Employee sleeping...");
     }
 
     public String getSpecialization() { return specialization; }

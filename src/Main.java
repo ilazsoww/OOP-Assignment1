@@ -1,3 +1,9 @@
+import interfaces.IWalk;
+import interfaces.IWork;
+import people.Employee;
+import people.Human;
+import people.Student;
+
 void main() {
     Student student1 = new Student("Math", 6.5f, 32, "Tabyn", true);
     Human sAsHuman = new Student("OOP", 1.0f);

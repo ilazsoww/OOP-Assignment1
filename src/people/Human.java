@@ -1,3 +1,5 @@
+package people;
+
 public abstract class Human {
     protected int teeth = 32;
     protected String region;
@@ -16,7 +18,7 @@ public abstract class Human {
     }
     public void goToDentist(int lostTeeth){
         if (lostTeeth < 0) {
-            System.out.println("Human can't have negative teeth");
+            System.out.println("people.Human can't have negative teeth");
         }
         System.out.println("Now I have: " + Math.max(0, this.teeth - lostTeeth));
     }

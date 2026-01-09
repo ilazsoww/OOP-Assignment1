@@ -1,4 +1,8 @@
-public final class Student extends Human implements IWalk{
+package people;
+
+import interfaces.IWalk;
+
+public final class Student extends Human implements IWalk {
     private static final int DEFAULT_TEETH = 32;
 
     private String bestSubject;
@@ -26,19 +30,19 @@ public final class Student extends Human implements IWalk{
     }
     @Override
     public void step(){
-        System.out.println("Student stepped.");
+        System.out.println("people.Student stepped.");
     }
     @Override
     public void jump(){
-        System.out.println("Student jumped.");
+        System.out.println("people.Student jumped.");
     }
     @Override
     public void sleep(){
-        System.out.println("Student sleeping");
+        System.out.println("people.Student sleeping");
         hoursOfSleep += 3f;
     }
     public final void study(){
-        System.out.println("Student studying...");
+        System.out.println("people.Student studying...");
         hoursOfSleep -= 3f;
     }
 
